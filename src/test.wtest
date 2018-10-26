@@ -1,0 +1,34 @@
+import obra.*
+import obreros.*
+
+describe "asd"{
+	test "test" {
+		
+		var o1 = new Obra()
+		var alb1 = new Albanil()
+		var alb2 = new Albanil()
+		var gas1 = new Gasista()
+		var gas2 = new Gasista()
+		var plom1 = new Plomero()
+		
+		o1.setLadrillos(1000)
+		o1.setCanio(400)
+		o1.setFosforos(8000)
+		o1.setArandelas(500)
+		alb2.tomarLic()
+		
+		o1.agregarObrero(alb1)
+		o1.agregarObrero(alb2)
+		o1.agregarObrero(gas1)
+		o1.agregarObrero(gas2)
+		o1.agregarObrero(plom1)
+		
+		o1.iniciarJornada()
+		
+		assert.equals(900, o1.ladrillos())
+		assert.equals(384, o1.canios())
+		assert.equals(7960, o1.fosforos())
+		assert.equals(470, o1.arandelas())
+		}
+	
+	}
