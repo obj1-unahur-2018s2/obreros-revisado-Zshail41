@@ -1,5 +1,6 @@
 class Obrero {
 	var blicencia = false
+	var jornalesAdeudados = 0
 	
 	method estaDeLicencia(){
 		return blicencia
@@ -28,7 +29,8 @@ class Albanil inherits Obrero{
 	
 	override method trabajar(obra){
 		obra.consumirLadrillos(ladrillosNecesarios)
-		obra.aportarPared(metrosDeParedLevantados)	
+		obra.aportarPared(metrosDeParedLevantados)
+		jornalesAdeudados++	
 	}
 	
 	method aportes(){

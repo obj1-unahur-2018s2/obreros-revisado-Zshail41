@@ -2,7 +2,10 @@ import obra.*
 import obreros.*
 
 describe "asd"{
+
 	test "test" {
+		
+		
 		
 		var o1 = new Obra()
 		var alb1 = new Albanil()
@@ -29,6 +32,19 @@ describe "asd"{
 		assert.equals(384, o1.canios())
 		assert.equals(7960, o1.fosforos())
 		assert.equals(470, o1.arandelas())
+		}
+		
+		test "la obra falla si no tiene obreros disponibles" {
+			var o1 = new Obra()
+		var alb1 = new Albanil()
+		var alb2 = new Albanil()
+		var gas1 = new Gasista()
+		var gas2 = new Gasista()
+		var plom1 = new Plomero()
+			
+			[alb1, gas1, gas2, plom1].forEach {obr => obr.estaDeLicencia()}
+			
+			assert.throwsException {o1.iniciarJornada()}
 		}
 	
 	}

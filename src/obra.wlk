@@ -73,6 +73,10 @@ class Obra{
 		return plantilla.filter({c => !c.estaDeLicencia()})
 	}
 	
+	method estaEnPlanilla(obrero){
+		return plantilla.contains(obrero)
+	}
+	
 	method consumirLadrillos(cant){
 		ladrillos -= cant
 	}
@@ -110,17 +114,16 @@ class Obra{
 	}
 	
 	method iniciarJornada(){
-		if(plantilla.size()> 0){
+		if(self.obrerosDisponibles().isEmpty()){
+			self.error("No hay obreros disponibles para trabajar")
+			}
 			plantilla.forEach({
 				obrero =>if(!obrero.estaDeLicencia()){
 				obrero.trabajar(self)}})
 				
 				}
-				
 				}
 	
-	
-	}
 	
 	
 	
